@@ -124,8 +124,11 @@ void searchData() {
 				return;
 			}
 			currentNode = currentNode->next;
-
 		}
+		cout << "Data tidak ditemukan " << endl;
 	}
 }
 
+int main() {
+	int pilihan;
+}
