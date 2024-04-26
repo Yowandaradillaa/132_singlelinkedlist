@@ -89,6 +89,16 @@ bool listEmpty() {
 		return false;
 
 }
-void traverse() {
 
+void traverse() {
+	if (listEmpty()) {
+		cout << "List kosong" << endl;
+		system("pause");
+		system("cls");
+		return;
+	}
+	else {
+		Node* currentNode = START;
+	
+	}
 }
