@@ -50,10 +50,10 @@ void addNode() {
 	previous->next = nodeBaru;
 }
 
-bool serachNode(int name, Node* current, Node* previous) {
+bool serachNode(int name, int nim, Node* current, Node* previous) {
 	previous = START;
 	current = START;
-	while (current != NULL && nim > current->noMhs)
+	while (current != NULL && nim  > current->noMhs)
 	{
 		previous = current;
 		current = current->next;
@@ -143,7 +143,49 @@ int main() {
 			cout << "5. Keluar" << endl;
 			cout << "Pilihan: ";
 			cin >> pilihan;
+			switch (pilihan)
+			{
+			case 1:
+				addNode();
+				cout << "Data Berhasil Ditambahkan" << endl;
+				system("pause");
+				system("cls");
+				break;
+			case 2:
+				if (listEmpty())
+				{
+					cout << "List Kosong" << endl;
+					system("pause");
+					system("cls");
+					break;
+				}
 
+				int nim;
+				cout << "Masukan NIM: ";
+				cin >> nim;
+				if (deleteNode(nim)) {
+					cout << "NIM: " << nim << "Berhasil dihapus" << endl;
+					system("pause");
+					system("cls");
+				}
+				else
+					cout << "Data Tidak Ditemukan" << endl;
+				break;
+			case 3:
+				traverse();
+				break;
+			case 4:
+				searchData();
+			case 5:
+				break;
+			default:
+				cout << "Pilihan tidak ada" << endl;
+				break;
+			}
 		}
-	}
+		catch (exception e)
+		{
+			cout << "Terjadi kesalahan" << endl;
+		}
+	} while (pilihan != 5);
 }
