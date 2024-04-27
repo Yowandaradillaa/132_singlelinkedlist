@@ -72,10 +72,10 @@ bool serachNode(int name, int nim, Node* current, Node* previous) {
 		return false;
 	}
 }
-bool deleteNode(int nim) {
+bool deleteNode(int nim, int name) {
 	Node* current = START;
 	Node* previous = START;
-	if (serachNode(nim, previous, current) == false)
+	if (serachNode(name, nim, previous, current) == false)
 		return false;
 	previous->next = current->next;
 	if (current == START)
@@ -163,7 +163,7 @@ int main() {
 				int nim;
 				cout << "Masukan NIM: ";
 				cin >> nim;
-				if (deleteNode(nim)) {
+				if (deleteNode) {
 					cout << "NIM: " << nim << "Berhasil dihapus" << endl;
 					system("pause");
 					system("cls");
